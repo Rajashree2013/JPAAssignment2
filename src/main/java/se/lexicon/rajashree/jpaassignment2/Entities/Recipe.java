@@ -9,7 +9,6 @@ import java.util.Set;
 @Entity
 public class Recipe {
 
-    //todo:fix int type string
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
