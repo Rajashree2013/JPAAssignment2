@@ -6,10 +6,10 @@ import se.lexicon.rajashree.jpaassignment2.Entities.RecipeCategory;
 
 import java.util.List;
 
-public interface RecipeRepo extends CrudRepository{
-    List<Recipe> findRecipeByName(String receipeName);
-    List<Recipe> findAllRecipes(String receipeIngredeintName);
+public interface RecipeRepo extends CrudRepository<Recipe,Integer> {
+    List<Recipe> findRecipeByNameContains(String receipeName);
+    List<Recipe> findAllRecipesContains(String receipeIngredeintName);
     List<Recipe> findByNameRecipeCategory(RecipeCategory receipeCategory);
-    List<Recipe> findAllRecipes(RecipeCategory receipeCategory);
+    List<Recipe> findAllRecipesMatchOneOrMoreCategory(RecipeCategory receipeCategory);
 
 }
