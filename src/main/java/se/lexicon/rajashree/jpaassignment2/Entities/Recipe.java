@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-@Entity
+@Entity(name = "recipe")
 public class Recipe {
 
     @Id
@@ -15,7 +15,8 @@ public class Recipe {
     @Column(nullable = false, length = 100)
     private String recipeName;
 
-    @OneToMany(fetch = FetchType.LAZY,
+    @OneToMany
+            (fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
             mappedBy = "recipe",
             orphanRemoval = true
@@ -23,6 +24,7 @@ public class Recipe {
     private List<RecipeIngredient> recipeIngredients;
 
     @OneToOne(mappedBy = "recipe")
+    @JoinColumn(name = "instruction_id")
     private RecipeInstruction instruction;
 
     @ManyToMany

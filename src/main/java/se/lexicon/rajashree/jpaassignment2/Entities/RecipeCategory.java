@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-@Entity
+@Entity(name = "RecipeCategory")
 public class RecipeCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,8 @@ public class RecipeCategory {
     private String category;
 
     @ManyToMany
-    @JoinTable(name = "receipecategory_receipe",
+    @JoinTable
+            (name = "receipecategory_receipe",
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "receipecategory_id")
     )

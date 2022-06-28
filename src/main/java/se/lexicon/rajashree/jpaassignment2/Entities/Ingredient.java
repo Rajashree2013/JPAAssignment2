@@ -3,7 +3,7 @@ package se.lexicon.rajashree.jpaassignment2.Entities;
 
 import javax.persistence.*;
 import java.util.Objects;
-   @Entity
+   @Entity(name = "ingredient")
    public class Ingredient {
    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

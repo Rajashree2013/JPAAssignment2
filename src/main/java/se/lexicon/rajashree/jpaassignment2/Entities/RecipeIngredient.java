@@ -5,7 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
+@Entity(name = "recipe_ingredient")
 public class RecipeIngredient {
 
     @Id

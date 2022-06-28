@@ -4,7 +4,7 @@ package se.lexicon.rajashree.jpaassignment2.Entities;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
+@Entity(name = "recipe_instruction")
 public class RecipeInstruction {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -7,9 +7,16 @@ import se.lexicon.rajashree.jpaassignment2.Entities.RecipeCategory;
 import java.util.List;
 
 public interface RecipeRepo extends CrudRepository<Recipe,Integer> {
-    List<Recipe> findRecipeByNameContains(String receipeName);
+    //Search for recipes where recipe name contains specified String.
+    List<Recipe> findByRecipeNameContaining(String name);
+
     List<Recipe> findAllRecipesContains(String receipeIngredeintName);
-    List<Recipe> findByNameRecipeCategory(RecipeCategory receipeCategory);
+
+
+    //Search for all recipes that belong to a specific recipe category
+    List<Recipe> findRecipesByCategoryName(String categoryName);
+
+    //Search for all recipes that match one or more categories
     List<Recipe> findAllRecipesMatchOneOrMoreCategory(RecipeCategory receipeCategory);
 
 }
